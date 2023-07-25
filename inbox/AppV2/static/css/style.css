@@ -1,0 +1,154 @@
+/*---------------------------------------
+# START CONFIGURATION
+---------------------------------------*/
+html,
+body {
+    height: 100%;
+    margin: 0;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+/*---------------------------------------
+# Footer
+---------------------------------------*/
+.wrapper{
+    
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+#footer,
+.push {
+    height: 50px;
+
+}
+
+/*---------------------------------------
+# Navbar
+---------------------------------------*/
+
+#btn-nav {
+    width: 90px;
+    float: right;
+    margin-right: 25px;
+    cursor: pointer;
+}
+
+/*---------------------------------------
+#Login
+-----------------------------------------*/
+#card-login {
+    width: 450px;
+}
+.login-border{
+    border-top: .4rem solid #093822;
+    border-bottom: .4rem solid #093822;
+    border-radius: 10px;
+}
+#btn-enter {
+    background-color: #093822;
+    border-radius: 15px;
+    font-size: 16px;
+
+}
+/*---------------------------------------
+# Typed JS (Effect)
+---------------------------------------*/
+.block-position{
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+/*---------------------------------------
+# Message (PULSE)
+---------------------------------------*/
+
+.pulse {
+    width: 65px;
+    height: 65px;
+    border-radius: 50%;
+    position: fixed;
+    right: 30px;
+    bottom: 75px;
+    padding: 5px;
+    animation: animate 3s linear infinite;
+}
+
+@keyframes animate {
+    0% {box-shadow: 0 0 0 0 rgba(1, 152, 117, .7),0 0 0 0 rgba(1, 152, 117,.7);}
+    40% {box-shadow: 0 0 0 30px rgba(255, 109, 74, 0), 0 0 0 0 rgba(1, 152, 117,.7);}
+    80% {box-shadow: 0 0 0 50px rgba(255, 109, 74, 0), 0 0 0 30px rgba(255, 109, 74, 0);}
+    100% {box-shadow: 0 0 0 0 rgba(255, 109, 74, 0), 0 0 0 30px rgba(255, 109, 74, 0);}
+}
+
+/*---------------------------------------
+# CUSTOM SWEET ALERT
+---------------------------------------*/
+/*ALL texts centered*/
+
+.swal-text {
+    text-align: center;
+}
+
+/* Icon setting */
+.swal-icon--success:before,
+.swal-icon--success:after,
+.swal-icon--success_hide-corners {
+    background: none !important;
+}
+.swal-icon--success {
+    /*color of ring */
+    border-color: #093822;
+}
+.swal-icon--success__line {
+    /*Animation */
+    background-color: #093822 ;
+}
+/* Button settings */
+.swal-button {
+    padding: 7px 19px;
+    border-radius: 5px;
+    background: color #111;
+    font-size: 12px;
+    border: 1px solid #111;
+}
+.swal-button:focus{
+    /* remove border around button*/
+    box-shadow: none;
+}
+.swal-button:not([disabled]):hover {
+    /* hover effect */
+    background-color: transparent;
+    color: #111;
+    border: 1px solid #111;
+}
+
+/* Bootstrap form */
+.form-control:focus {
+    border-color: #093822;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.btn:focus, .btn-active {
+    outline: none;
+    box-shadow: none;
+}
+/* Checkbox (show/hide settings) */
+.form-check-input:checked {
+    background-color: #093822;
+    border: #093822 !important;
+    box-shadow: 0 0 8px rgba(1, 152, 117, 0.4) !important;
+}
+.form-check-input {
+    border: #093822 !important;
+    box-shadow: 0 0 8px rgba(1, 152, 117, 0.4) !important;
+}
+.form-switch .form-check-input:focus {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox= "0 0 20 20'%3e%3cpath fill='gray'/%3e%3c/svg%3e");"
+}

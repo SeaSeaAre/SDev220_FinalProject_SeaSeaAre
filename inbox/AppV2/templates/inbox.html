@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+<!===Title on tab browser ===>
+{%block title%}Inbox Page{%endblock title%}
+
+<!=== Block image denied here ===>
+{% block image %}{% endblock image %}
+
+<!---Block Typed JS denied here-->
+{% block typed %}{% endblock typed %}
+
+{% block nav-content%}    
+<i class="fas fa-envelope" style="color #8abaae;"></i>&nbsp;&nbsp; Inbox
+{% endblock nav-content %}
+
+{% block sidebar-content %}
+<a href="{%url 'logout'%}" class="btn btn-outline-danger btn-sm">Logout<a/>
+<a href="#" class="btn btn-outline-success btn-sm">Admin<a/>
+{% endblock sidebar-content %}
+
+<!=== Page content ===>
+{%block content%}
+<br>
+<div class="container-fluid mt-3" style="width: 90%;">
+
+    <!---Dashboard-->
+    <div>
+        {% include 'dashboard/dashboard.html' %}
+    </div>
+    <br>
+
+<!---Global Search-->
+    <form>
+        <div class="input-group input-group-sm mb-3">
+            <input name="#" type="text" class="form-control input-sm" placeholder="Search for..." value="#">
+            <button class="btn btn-secondary" title="Search"><i class="fas fa-search"></i></button>
+            <a href="{% url "inbox" %}" class="btn brn-dark" style="margin-left: 2px;"></a>
+        </div>
+    </form>
+
+
+
+
+</div> <!--end//container-->
+
+{%endblock content%}

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Backend Client Dashboard</title>
+</head>
+<body>
+    <h1>Backend Client Dashboard</h1>
+    <ul>
+        {% for client in clients %}
+            <li>
+                <strong>{{ client.name }}</strong><br>
+                Address: {{ client.address }}<br>
+                Phone: {{ client.phone }}<br>
+                Email: {{ client.email }}<br>
+                Notes: {{ client.notes }}<br>
+                Files Uploaded:<br>
+                <ul>
+                    {% for file in client.files.all %}
+                        <li>{{ file.file_path }}</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{% url 'create_client' %}">Create New Client</a>
+</body>
+</html>
