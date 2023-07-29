@@ -31,6 +31,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'jazzmin',
     'django.contrib.admindocs',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -128,3 +129,8 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 #Login/Logout
 LOGIN_REDIRECT_URL = "inbox"
 LOGOUT_REDIRECT_URL = "home"
+
+# Welcome text on the login screen
+JAZZMIN_SETTINGS = {
+"welcome_sign": "Welcome to the SeaAre Tech",
+}

@@ -38,6 +38,7 @@
         <!=== Navbar ===>
         <header>
             <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <!---icon and title content 1-->
                 <div class ="col-sm">
                     <a class="navbar-brand flex-grow-1" style="color: #fff; margin-left: 25px;">
                         {% block nav-content%}    
@@ -45,7 +46,12 @@
                         {% endblock nav-content %}
                     </a>
                 </div>
-                <!=== Hamburger ===>
+                
+                <!---date and time content 2-->
+                {% block datatime %}{% endblock datatime %}
+                
+                <!---hamburger content 3-->
+
                 <div class="col-sm">
                     <a class="navbar-brand flex-grow-1" id="btn-nav" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight" aria-controls="offcanvasRight">
                         <i class="fas fa-bars"></i>
@@ -56,9 +62,9 @@
     <!===Block content (Root)==== >
     {%block content%}{% endblock %}
 
-    </div> <!END // wrapper ===> 
+    </div> <!--End wrapper--> 
 
-    <!=== Sidebar (Bootstrap offcanvas) ===>
+    <!--sidebar (Bootstrap offcanvas) -->  
     <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
         <div class="offcanvas-header">
             <h5 id="offcanvasRightLabel">MENU</h5>
@@ -67,7 +73,7 @@
         <div class="offcanvas-body">
             <div class="d-grid gap-2">
                 {% block sidebar-content %}
-                <a href="{%url 'inbox'%}" class="btn btn-secondary">Login<a/>
+                <a href="{% url 'inbox'%}" class="btn btn-secondary">Login<a/>
                 {% endblock sidebar-content %}
                 <hr><br>
                 <center class="mt-5">
@@ -79,7 +85,7 @@
 
 
 
-<!===Footer ===>
+<!--Footer-->
     <footer class="bg-dark text-center text-lg-st" id="footer" style="color: #fff;">
         <div class="text-center p-3" style="background-color: rgba(0, 0, 0.2,);"> 
         &copy; {% now "Y" %} Copyright:
@@ -88,6 +94,12 @@
             </a>
         </div>
     </footer>
+
+<!--Includes -->
+{% include 'modals/logout.html' %}
+{% include 'modals/message.html' %}
+
+
 
 <!=== Message from backend (login) ===>
 {% if form.errors%}
@@ -146,5 +158,10 @@
             }
         }
     </script>
+    <!-----script to close offcanvas button-->
+    jQuery("#offcanvasRight, .offcanvas-body a").click(function(){
+        console.log($(this).attr("href"));
+        jQuery("#offcanvasRight")('hide');
+    });
 </body>
 </html>

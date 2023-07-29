@@ -19,15 +19,16 @@ from AppV2 import views #from inside app import to inbox
 
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
-    #Path to access admin page
+    # Path to access admin page
     path('admin/', admin.site.urls),
-    #Path to home page (frontend)
+    # Path to home page (frontend)
     path('', views.home, name="home"),
-    #Path to inbox page (backend)
+    # Path to inbox page (backend)
     path('inbox/', views.inbox, name="inbox"),
-    #url on browser   Function on views.py    url inside the html file
-    #Path to Login/Logout
+    # url on browser   Function on views.py    url inside the html file
+    # Path to Login/Logout
     path('login/', include('django.contrib.auth.urls')),
-    path("create/" , views.create_client, name="create_client"),
-    path("dashboard/" , views.client_dashboard, name="client_dashboard")
+    path("create/", views.create_client, name="create_client"),
+    path("dashboard/", views.client_dashboard, name="client_dashboard")
+
 ]
