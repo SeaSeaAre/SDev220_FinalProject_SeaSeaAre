@@ -6,16 +6,27 @@ User's Guide: Client Dashboard for Veterans and VA Employees
 Table of Contents
 Introduction
 1.1 Purpose
+
 1.2 Target Audience
+
 Getting Started
+
 2.1 Installation
+
 2.2 Launching the Client Dashboard
+
 Features and Functionality
+
 3.1 Creating a New Client
+
 3.2 Viewing Client Information
+
 3.3 Displaying Uploaded Files
+
 3.4 Managing Notes
+
 3.5 Tracking Encounters
+
 Troubleshooting
 Frequently Asked Questions (FAQ)
 Support and Contact
