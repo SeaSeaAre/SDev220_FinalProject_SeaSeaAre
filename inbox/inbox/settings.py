@@ -9,8 +9,10 @@ https://docs.djangoproject.com/en/4.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.0/ref/settings/
 """
-
+import os
 from pathlib import Path
+from django.conf.urls.static import static
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +33,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jazzmin',
+    'jazzmin',  
     'django.contrib.admindocs',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -54,6 +56,7 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'inbox.urls'
+
 
 TEMPLATES = [
     {
@@ -134,3 +137,5 @@ LOGOUT_REDIRECT_URL = "home"
 JAZZMIN_SETTINGS = {
 "welcome_sign": "Welcome to the SeaAre Tech",
 }
+MEDIA_ROOT= os.path.join(BASE_DIR, 'media')
+MEDIA_URL= '/media/'

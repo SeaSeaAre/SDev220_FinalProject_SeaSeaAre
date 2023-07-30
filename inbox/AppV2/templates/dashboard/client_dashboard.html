@@ -1,11 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Backend Client Dashboard</title>
-</head>
-<body>
-    <h1>Backend Client Dashboard</h1>
-    <ul>
+{% extends 'dashboard/baseDash.html' %} 
+
         {% for client in clients %}
             <li>
                 <strong>{{ client.name }}</strong><br>

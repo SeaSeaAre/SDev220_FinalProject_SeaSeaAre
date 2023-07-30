@@ -3,13 +3,28 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponseRedirect
 from django.contrib.auth.decorators import login_required # Login required to access private pages
 from django.views.decorators.cache import cache_control # Destroy section after logout
-from .models import Client
-# Create your views here.
+from .models import Client 
+from AppV2.forms import ClientForm # Import the form
+from django.contrib import messages # To display messages
+from django.http import HttpResponseRedirect
+
 
 #Function to home (frontend)
 
 def home(request):
     return render(request, "home.html")
+
+#function to send a message
+def send_message(request):
+    if request.method == 'POST':
+        form = ClientForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Message sent successfully')
+            return HttpResponseRedirect('/')
+    else:
+        form = ClientForm()
+        return render(request, 'home.html', {'form': form})
 
 #Function to inbox (backend)
 @login_required(login_url="login")
@@ -28,7 +43,7 @@ def create_client(request):
         client = Client.objects.create(name=name, address=address, phone=phone, email=email, ssn="#",)
         client.save()
 
-        return redirect('client_dashboard/')  # Redirect to the dashboard page after creating the client
+    return redirect('client_dashboard/')  # Redirect to the dashboard page after creating the client
 
     return render(request, 'create_client.html')  # Render the form page initially
 
