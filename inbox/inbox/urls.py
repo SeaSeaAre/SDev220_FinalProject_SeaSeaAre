@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path,include
 from AppV2 import views #from inside app import to inbox
+from inbox import settings
+from django.conf.urls.static import static
+
 
 urlpatterns = [
     path('admin/doc/', include('django.contrib.admindocs.urls')),
@@ -28,7 +31,5 @@ urlpatterns = [
     # url on browser   Function on views.py    url inside the html file
     # Path to Login/Logout
     path('login/', include('django.contrib.auth.urls')),
-    path("create/", views.create_client, name="create_client"),
-    path("dashboard/", views.client_dashboard, name="client_dashboard")
 
-]
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
